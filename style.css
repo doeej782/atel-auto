@@ -7,6 +7,9 @@
 a {
     text-decoration: none;
 }
+ul {
+    margin-bottom: 0;
+}
 
 li {
     list-style: none;
@@ -27,7 +30,11 @@ h1, h2, h3, h4, h5, h6, p {
     width: 100%;
     height: 80px;
     background-color: #181511;
-    position: relative;
+    /* position: relative; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
 }
 
 .nav {
@@ -35,6 +42,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .nav__logo {
@@ -85,12 +93,44 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* home */
 
-.home {
+/* .home {
     background-image: url(./img/IMAGE.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 120px 0 200px;
+} */
+.home {
+    margin-top: 80px;
+}
+.item1  {
+    background-image: url(./img/cars/auto1.png);
+    background-position: 0px 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 600px;
+    padding: 120px 250px 200px;
+}
+.item2  {
+    background-image: url(./img/cars/auto2.png);
+    background-position: 0px 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 600px;
+    padding: 120px 250px 200px;
+}
+.item3  {
+    background-image: url(./img/cars/auto3.png);
+    background-position: 0px 10px ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 600px;
+    padding: 120px 250px 200px;
+}
+.carousel-item {
+  background-color: #161616;
+
+
 }
 .home__text {
     /* margin-top: 120px; */
@@ -181,6 +221,57 @@ color: #FFAE2B;
     align-items: center;
     padding: 41px;
 }
+
+.cars__car:hover {
+    box-shadow: 0px 5px 5px #fff;
+    cursor: pointer;
+
+}
+
+/* modal */
+
+.car_modal {
+    display: none;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+     top: 0;
+}
+
+
+.close_car {
+    color: #fff;
+    font-size: 50px;
+    position: fixed;
+    right: 5%;
+}
+.close_car:hover {
+    cursor: pointer;
+    color: #FFAE2B;
+    transition: 500ms;
+}
+
+.car_modal_body {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 45%;
+    gap: 5%;
+}
+.car_modal_left {
+    margin-top: 100px;
+    background-color: #FFAE2B;
+    height: 500px;
+}
+.car_modal_right {
+    margin-top: 100px;
+
+    background-color: #4a0d99;
+    height: 500px;
+}
+
 
 .cars__text {
     font-size: 13px;
@@ -297,8 +388,49 @@ color: #ACA592;
     width: 50px;
     height: 50px;
     position: absolute;
+    z-index: 6;
     right: 35px;
     top: 15px;
+}
+
+.burger_modal {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    top :0;
+    right: 0;
+    background-color: #181511;
+    animation-name: anime;
+    animation-duration: 500ms;
+
+}
+@keyframes anime {
+    0% {top: -400px}
+    100% {top: 0px}
+}
+@keyframes anime1 {
+    0% {top: 0px}
+    100% {top: -400px}
+}
+
+.open_modal {
+    display: block;
+    
+
+}
+
+.burger_list {
+    padding: 100px 0  ;
+    text-align: center;
+}
+.burger__link {
+    color: #fff;
+    font-size: 25px;
+    display: inline-block;
+    margin-bottom: 20px;
+
 }
 
 @media(max-width: 500px) {
@@ -338,4 +470,20 @@ color: #ACA592;
     .service__cards  {
         margin:  auto;
     }
+
+    .carousel-item {
+        padding: 120px 50px 200px;
+
+    }
 }
+
+
+
+.car_modal_open {
+    display: block;
+}
+.car_modal_close {
+    display: none;
+}
+
+
